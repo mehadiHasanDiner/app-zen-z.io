@@ -1,8 +1,22 @@
 import React from "react";
 import logo from "./../../assets/zenZ-logo.jpg";
-import { Link } from "react-router";
+import { Link, NavLink } from "react-router";
+import { FaGithub } from "react-icons/fa";
 
 const Header = () => {
+  const links = (
+    <>
+      <NavLink>
+        <li>Home</li>
+      </NavLink>
+      <NavLink>
+        <li>Apps</li>
+      </NavLink>
+      <NavLink>
+        <li>Installation</li>
+      </NavLink>
+    </>
+  );
   return (
     <div className="navbar bg-base-100 shadow-sm">
       <div className="navbar-start">
@@ -26,14 +40,9 @@ const Header = () => {
           </div>
           <ul
             tabIndex="-1"
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-5 shadow gap-2 hover:"
           >
-            <li>
-              <a>Item 1</a>
-            </li>
-            <li>
-              <a>Item 2</a>
-            </li>
+            {links}
           </ul>
         </div>
         <Link to={"/"} className="flex">
@@ -46,17 +55,13 @@ const Header = () => {
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-          <li>
-            <a>Item 1</a>
-          </li>
-          <li>
-            <a>Item 3</a>
-          </li>
-        </ul>
+        <ul className="menu menu-horizontal px-1 gap-5">{links}</ul>
       </div>
       <div className="navbar-end">
-        <a className="btn btn-primary">Contribution</a>
+        <a className="btn btn-primary">
+          <FaGithub />
+          Contribution
+        </a>
       </div>
     </div>
   );
