@@ -6,19 +6,43 @@ import { FaGithub } from "react-icons/fa";
 const Header = () => {
   const links = (
     <>
-      <NavLink>
-        <li>Home</li>
+      <NavLink to="/">
+        {({ isActive }) => (
+          <li
+            className={
+              isActive ? "color-primary underline hover:font-bold" : ""
+            }
+          >
+            Home
+          </li>
+        )}
       </NavLink>
-      <NavLink>
-        <li>Apps</li>
+      <NavLink to="/apps">
+        {({ isActive }) => (
+          <li
+            className={
+              isActive ? "color-primary underline hover:font-bold" : ""
+            }
+          >
+            Apps
+          </li>
+        )}
       </NavLink>
-      <NavLink>
-        <li>Installation</li>
+      <NavLink to="/installation">
+        {({ isActive }) => (
+          <li
+            className={
+              isActive ? "color-primary underline hover:font-bold" : ""
+            }
+          >
+            Installation
+          </li>
+        )}
       </NavLink>
     </>
   );
   return (
-    <div className="navbar bg-base-100 shadow-sm">
+    <div className="navbar bg-base-100 max-w-6xl mx-auto">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -48,9 +72,7 @@ const Header = () => {
         <Link to={"/"} className="flex">
           <img className="w-18" src={logo} alt="" />
           <p className="text-2xl font-bold">
-            <span className="bg-linear-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
-              .io
-            </span>
+            <span className="color-primary">.io</span>
           </p>
         </Link>
       </div>
