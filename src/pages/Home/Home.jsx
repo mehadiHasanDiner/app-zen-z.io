@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import Card from "../../components/Card/Card";
 import Banner from "../../components/Banner/Banner";
 import Apps from "../Apps/Apps";
+import { useLoaderData } from "react-router";
 
 const Home = () => {
+  const appsData = useLoaderData();
+  const [appsDataCount, setAppsDataCount] = useState(8);
+  const slicedAppData = appsData.slice(0, appsDataCount);
+  console.log(slicedAppData);
+
   return (
     <div>
       <Banner></Banner>
@@ -15,8 +21,20 @@ const Home = () => {
             Explore All Trending Apps on the Market developed by us
           </p>
         </div>
-        <div>
-          <Apps></Apps>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 my-8">
+          {slicedAppData.map((app) => (
+            <Apps key={app.id} app={app}></Apps>
+          ))}
+        </div>
+        <div className="block text-center">
+          {appsDataCount <= slicedAppData.length && (
+            <button
+              className="btn bg-linear-to-r from-purple-600 to-pink-500 text-white"
+              onClick={() => setAppsDataCount(appsDataCount + 8)}
+            >
+              Show More
+            </button>
+          )}
         </div>
       </div>
     </div>

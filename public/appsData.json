@@ -66,15 +66,15 @@
         ]
     },
     {
-        "image": "https://example.com/app3.jpg",
-        "title": "https://play-lh.googleusercontent.com/2i5NnUNN8Z9Ft8dSyCW87FJlEDHiZ7YZyM46h2ksk7v1LrgzsaI5I5Ie2isWYhajxg",
+        "image": "https://play-lh.googleusercontent.com/2i5NnUNN8Z9Ft8dSyCW87FJlEDHiZ7YZyM46h2ksk7v1LrgzsaI5I5Ie2isWYhajxg",
+        "title": "Photo Magic Editor",
         "companyName": "Creative Minds",
         "id": 3,
         "description": "Photo Magic Editor offers a wide range of editing tools that allow users to transform their photos into stunning visuals. With filters, effects, AI enhancements, and easy sharing options, users can create professional-quality images in just a few taps, making it perfect for both beginners and advanced users.",
         "size": 75,
         "reviews": 1500,
         "ratingAvg": 4.7,
-        "downloads": 75000,
+        "downloads": 1100000,
         "ratings": [
             {
                 "name": "1 star",
@@ -206,7 +206,7 @@
         "size": 120,
         "reviews": 2100,
         "ratingAvg": 4.8,
-        "downloads": 100000,
+        "downloads": 1000000,
         "ratings": [
             {
                 "name": "1 star",

@@ -80,7 +80,7 @@ const Header = () => {
         <ul className="menu menu-horizontal px-1 gap-5">{links}</ul>
       </div>
       <div className="navbar-end">
-        <a className="btn btn-primary">
+        <a className="btn btn-primary bg-linear-to-r from-purple-600 to-pink-500 border-0">
           <FaGithub />
           Contribution
         </a>
