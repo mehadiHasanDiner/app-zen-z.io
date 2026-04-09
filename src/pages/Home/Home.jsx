@@ -8,7 +8,7 @@ const Home = () => {
   const appsData = useLoaderData();
   const [appsDataCount, setAppsDataCount] = useState(8);
   const slicedAppData = appsData.slice(0, appsDataCount);
-  console.log(slicedAppData);
+  // console.log(slicedAppData);
 
   return (
     <div>

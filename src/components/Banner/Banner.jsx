@@ -1,5 +1,6 @@
 import React from "react";
 import heroImage from "./../../assets/hero.png";
+import { Link } from "react-router";
 
 const Banner = () => {
   return (
@@ -13,22 +14,26 @@ const Banner = () => {
         digital experiences that truly make an impact.
       </p>
       <div className="text-center my-5 space-x-4">
-        <button className="btn">
-          <img
-            className="w-2/9"
-            src="https://img.icons8.com/?size=100&id=rZwnRdJyYqRi&format=png&color=000000"
-            alt=""
-          />
-          Google Play
-        </button>
-        <button className="btn">
-          <img
-            className="w-2/9"
-            src="https://img.icons8.com/?size=100&id=4PbFeZOKAc61&format=png&color=000000"
-            alt=""
-          />
-          App Store
-        </button>
+        <Link to="https://play.google.com/store/apps" target="_blank">
+          <button className="btn">
+            <img
+              className="w-2/9"
+              src="https://img.icons8.com/?size=100&id=rZwnRdJyYqRi&format=png&color=000000"
+              alt=""
+            />
+            Google Play
+          </button>
+        </Link>
+        <Link to="https://www.apple.com/app-store" target="_blank">
+          <button className="btn">
+            <img
+              className="w-2/9"
+              src="https://img.icons8.com/?size=100&id=4PbFeZOKAc61&format=png&color=000000"
+              alt=""
+            />
+            App Store
+          </button>
+        </Link>
       </div>
       <img className="block mx-auto w-2/4" src={heroImage} alt="" />
     </div>

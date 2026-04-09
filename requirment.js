@@ -31,20 +31,23 @@ Create an JSON Array of minimum 12-20 objects for app data using the following s
 
 2. 🏠 Home Page
 Banner
-Must contain a center-aligned heading, text, and two buttons.
-“App Store” button will redirect to the App Store.
-“Play Store” button will redirect to the Play Store.
-States Section
-Must contain three state cards as shown in Figma.
-Top Apps Section
-Display eight apps in a four-column layout.
-Each app card should display:
-App title
-Image
-Download count
-Average rating
-Clicking on a card should navigate the user to the App Details page.
-Include a “Show All” button that navigates to the All Apps page.
+Must contain a center-aligned heading, text, and two buttons. (✔✖✖)
+“App Store” button will redirect to the App Store. (✔)
+“Play Store” button will redirect to the Play Store. (✔)
+
+States Section (✔)
+Must contain three state cards as shown in Figma. (✔)
+
+Top Apps Section (✔)
+Display eight apps in a four-column layout. (✔)
+
+Each app card should display: (✔)
+App title (✔)
+Image (✔)
+Download count (✔)
+Average rating (✔)
+Clicking on a card should navigate the user to the App Details page. (✖)
+Include a “Show All” button that navigates to the All Apps page. (✔)
 
 3.📱 All Apps Page
 Title Section

@@ -17,7 +17,7 @@ const Header = () => {
           </li>
         )}
       </NavLink>
-      <NavLink to="/apps">
+      <NavLink to="/allApps">
         {({ isActive }) => (
           <li
             className={
@@ -80,10 +80,12 @@ const Header = () => {
         <ul className="menu menu-horizontal px-1 gap-5">{links}</ul>
       </div>
       <div className="navbar-end">
-        <a className="btn btn-primary bg-linear-to-r from-purple-600 to-pink-500 border-0">
-          <FaGithub />
-          Contribution
-        </a>
+        <Link to="https://github.com/mehadiHasanDiner" target="_blank">
+          <button className="btn btn-primary bg-linear-to-r from-purple-600 to-pink-500 border-0">
+            <FaGithub />
+            Contribution
+          </button>
+        </Link>
       </div>
     </div>
   );
