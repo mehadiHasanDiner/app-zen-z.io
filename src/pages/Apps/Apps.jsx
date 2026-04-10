@@ -4,12 +4,15 @@ import { FaStar } from "react-icons/fa";
 import { Link } from "react-router";
 import { downloadFormation } from "../../utilities/utilitiesFunc";
 
-const Apps = ({ app }) => {
+const Apps = ({ app, pathAll }) => {
   const { id, image, title, ratingAvg, downloads } = app;
+  // console.log(type);
+
+  const path = pathAll === "showAll" ? `${id}` : `appDetails/${id}`;
 
   return (
     <div className="card  shadow-sm hover:shadow-xl ">
-      <Link to={`appDetails/${id}`}>
+      <Link to={path}>
         <figure className="bg-gray-200 pb-3 ">
           <img
             className=" w-5/6 p-3 rounded-xl pb-0 "
