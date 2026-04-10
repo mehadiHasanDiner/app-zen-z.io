@@ -9,7 +9,7 @@ const Root = () => {
       <div className="border border-[#E9E9E9]  ">
         <Header></Header>
       </div>
-      <div className="mt-20">
+      <div className="mt-24">
         <Outlet></Outlet>
       </div>
       <Footer></Footer>
