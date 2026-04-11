@@ -11,9 +11,9 @@ const Apps = ({ app, pathAll }) => {
   const path = pathAll === "showAll" ? `${id}` : `appDetails/${id}`;
 
   return (
-    <div className="card  shadow-sm hover:shadow-xl ">
+    <div className="card bg-white shadow-sm hover:shadow-xl ">
       <Link to={path}>
-        <figure className="bg-gray-200 pb-3 ">
+        <figure className="bg-white pb-3 ">
           <img
             className=" w-5/6 p-3 rounded-xl pb-0 "
             src={image}
