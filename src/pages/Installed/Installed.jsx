@@ -3,12 +3,8 @@ import { FaDownload } from "react-icons/fa";
 import { FaStar } from "react-icons/fa";
 import { downloadFormation } from "../../utilities/utilitiesFunc";
 
-const Installed = ({ data }) => {
+const Installed = ({ data, handleUnInstallation }) => {
   const { id, image, title, ratingAvg, downloads, size } = data;
-
-  const handleUnInstallation = (id) => {
-    console.log(id);
-  };
 
   return (
     <div className="bg-white flex h-20 gap-4 my-4 p-1 justify-between rounded ">
@@ -33,7 +29,7 @@ const Installed = ({ data }) => {
       <div className="">
         <button
           onClick={() => handleUnInstallation(id)}
-          className="btn bg-[#00D390] text-white text-lg mt-4 "
+          className="btn bg-[#00D390] text-white text-lg mt-4 mr-2 "
         >
           Uninstall
         </button>

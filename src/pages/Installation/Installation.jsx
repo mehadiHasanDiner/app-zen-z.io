@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useLoaderData } from "react-router";
-import { getInstalledApp } from "../../utilities/utilitiesFunc";
+import {
+  getInstalledApp,
+  removeInstalledAppFromLS,
+} from "../../utilities/utilitiesFunc";
 import Installed from "../Installed/Installed";
 import { IoMdArrowDropdown } from "react-icons/io";
+import { ToastContainer } from "react-toastify";
 
 const Installation = () => {
   const appsData = useLoaderData();
@@ -18,7 +22,7 @@ const Installation = () => {
     );
     setInstalledAppData(installedApp);
   }, []);
-  console.log(installedAppData);
+  // console.log(installedAppData);
 
   const handleSort = (type) => {
     setSort(type);
@@ -36,8 +40,17 @@ const Installation = () => {
     }
   };
 
+  const handleUnInstallation = (id) => {
+    const remainingInstalledApp = installedAppData.filter(
+      (app) => app.id !== id
+    );
+    removeInstalledAppFromLS(String(id));
+    setInstalledAppData(remainingInstalledApp);
+  };
+
   return (
     <div className="max-w-6xl mx-auto">
+      <ToastContainer />
       <div className="space-y-2">
         <h2 className="text-3xl font-bold text-center">Your Installed Apps</h2>
         <p className="text-sm text-gray-500 text-center">
@@ -66,9 +79,12 @@ const Installation = () => {
           </ul>
         </div>
       </div>
-
       {installedAppData.map((data) => (
-        <Installed key={data.id} data={data}></Installed>
+        <Installed
+          key={data.id}
+          data={data}
+          handleUnInstallation={handleUnInstallation}
+        ></Installed>
       ))}
     </div>
   );

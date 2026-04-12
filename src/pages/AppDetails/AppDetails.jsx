@@ -17,6 +17,7 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
+import { ToastContainer } from "react-toastify";
 
 const AppDetails = () => {
   const { id } = useParams();
@@ -27,7 +28,7 @@ const AppDetails = () => {
   const [clicked, setClicked] = useState(false);
 
   const singleApp = appData.find((app) => app.id === appIdToNo);
-  // console.log(singleApp);
+  console.log(id);
 
   const handleInstallation = (appId) => {
     console.log(clicked);
@@ -42,7 +43,12 @@ const AppDetails = () => {
   }, []);
 
   if (!singleApp) {
-    return <h2>No item found 😨⛳😨</h2>;
+    const { id } = useParams();
+    return (
+      <h2>
+        (<span>{id}</span>No item found 😨⛳😨)
+      </h2>
+    );
   }
   const {
     image,
@@ -121,6 +127,20 @@ const AppDetails = () => {
         </div>
       </div>
       <div className="border-[0.5px] border-[#001931] opacity-10 my-5"></div>
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+        transition={Bounce}
+      />
+
       <div>
         <BarChart
           layout="vertical"
