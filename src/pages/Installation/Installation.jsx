@@ -11,16 +11,22 @@ import { ToastContainer } from "react-toastify";
 const Installation = () => {
   const appsData = useLoaderData();
   const [installedAppData, setInstalledAppData] = useState([]);
+  const [loading, setLoading] = useState(false);
   const [sort, setSort] = useState("");
 
   useEffect(() => {
-    const installedAppId = getInstalledApp();
-    const installedAppIdToNo = installedAppId.map((id) => parseInt(id));
+    setLoading(true);
+    const timeOut = setTimeout(() => {
+      const installedAppId = getInstalledApp();
+      const installedAppIdToNo = installedAppId.map((id) => parseInt(id));
 
-    const installedApp = appsData.filter((app) =>
-      installedAppIdToNo.includes(app.id)
-    );
-    setInstalledAppData(installedApp);
+      const installedApp = appsData.filter((app) =>
+        installedAppIdToNo.includes(app.id)
+      );
+      setInstalledAppData(installedApp);
+      setLoading(false);
+    }, 500);
+    return () => clearTimeout(timeOut);
   }, []);
   // console.log(installedAppData);
 
@@ -51,6 +57,7 @@ const Installation = () => {
   return (
     <div className="max-w-6xl mx-auto">
       <ToastContainer />
+
       <div className="space-y-2">
         <h2 className="text-3xl font-bold text-center">Your Installed Apps</h2>
         <p className="text-sm text-gray-500 text-center">
@@ -79,13 +86,21 @@ const Installation = () => {
           </ul>
         </div>
       </div>
-      {installedAppData.map((data) => (
-        <Installed
-          key={data.id}
-          data={data}
-          handleUnInstallation={handleUnInstallation}
-        ></Installed>
-      ))}
+      {loading ? (
+        <>
+          <div className="flex col-span-full justify-center mt-10">
+            <div className="w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+          </div>
+        </>
+      ) : (
+        installedAppData.map((data) => (
+          <Installed
+            key={data.id}
+            data={data}
+            handleUnInstallation={handleUnInstallation}
+          ></Installed>
+        ))
+      )}
     </div>
   );
 };

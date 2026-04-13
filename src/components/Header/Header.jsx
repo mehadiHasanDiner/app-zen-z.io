@@ -2,6 +2,7 @@ import React from "react";
 import logo from "./../../assets/zenZ-logo.jpg";
 import { Link, NavLink } from "react-router";
 import { FaGithub } from "react-icons/fa";
+import { FaHome } from "react-icons/fa";
 
 const Header = () => {
   const links = (
@@ -10,7 +11,9 @@ const Header = () => {
         {({ isActive }) => (
           <li
             className={
-              isActive ? "color-primary underline hover:font-bold" : ""
+              isActive
+                ? "color-primary underline underline-offset-4 decoration-[3px] pb-0.5 hover:font-bold "
+                : ""
             }
           >
             Home
@@ -21,7 +24,9 @@ const Header = () => {
         {({ isActive }) => (
           <li
             className={
-              isActive ? "color-primary underline hover:font-bold" : ""
+              isActive
+                ? "color-primary underline underline-offset-4 decoration-[3px] pb-0.5  hover:font-bold"
+                : ""
             }
           >
             Apps
@@ -32,7 +37,9 @@ const Header = () => {
         {({ isActive }) => (
           <li
             className={
-              isActive ? "color-primary underline hover:font-bold" : ""
+              isActive
+                ? "color-primary underline underline-offset-4 decoration-[3px] py-0.5 hover:font-bold"
+                : ""
             }
           >
             Installation
@@ -65,7 +72,7 @@ const Header = () => {
             </div>
             <ul
               tabIndex="-1"
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-5 shadow gap-2 hover:"
+              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-5 shadow gap-2"
             >
               {links}
             </ul>
@@ -78,7 +85,7 @@ const Header = () => {
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 gap-5">{links}</ul>
+          <ul className="menu menu-horizontal px-2 gap-5 ">{links}</ul>
         </div>
         <div className="navbar-end">
           <Link to="https://github.com/mehadiHasanDiner" target="_blank">
