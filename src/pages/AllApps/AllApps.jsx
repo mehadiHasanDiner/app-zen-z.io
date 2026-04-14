@@ -31,7 +31,7 @@ const AllApps = () => {
   return (
     <div className="max-w-6xl mx-auto">
       <div className="space-y-2">
-        {" "}
+        <title>All Apps</title>
         <h2 className="text-3xl font-bold text-center">Our All Applications</h2>
         <p className="text-sm text-gray-500 text-center">
           Explore All Apps on the Market developed by us. We code for Millions

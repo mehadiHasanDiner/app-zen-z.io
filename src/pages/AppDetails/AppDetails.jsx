@@ -65,6 +65,8 @@ const AppDetails = () => {
 
   return (
     <div className="max-w-6xl mx-auto mt-10">
+      <title>{title}</title>
+
       <div className="flex flex-col md:flex-row w-full justify-center items-center">
         <div className="mr-8 w-1/4">
           <img className="w-full" src={image} alt="" />

@@ -50,6 +50,7 @@ const Installation = () => {
 
   return (
     <div className="max-w-6xl mx-auto">
+      <title>Installed App</title>
       <ToastContainer />
 
       <div className="space-y-2">
