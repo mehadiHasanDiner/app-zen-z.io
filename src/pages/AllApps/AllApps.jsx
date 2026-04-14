@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useLoaderData } from "react-router";
 import Apps from "../Apps/Apps";
 import { FaSearch } from "react-icons/fa";
+import loadingUI from "./../../assets/loading.gif";
+import Loader from "../../components/Loader/Loader";
+import NoAppFound from "../NoAppFound/NoAppFound";
 
 const AllApps = () => {
   const allAppsData = useLoaderData();
@@ -54,8 +57,8 @@ const AllApps = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {loading ? (
           <>
-            <div className="flex col-span-full justify-center mt-10">
-              <div className="w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+            <div className="col-span-full -mt-20">
+              <Loader src={loadingUI} size={500} />
             </div>
           </>
         ) : (
@@ -64,7 +67,11 @@ const AllApps = () => {
           ))
         )}
 
-        {displayApps.length === 0 && <p>No apps found 😢</p>}
+        {displayApps.length === 0 && (
+          <div className="col-span-full">
+            <NoAppFound searchText={searchText}></NoAppFound>
+          </div>
+        )}
       </div>
     </div>
   );

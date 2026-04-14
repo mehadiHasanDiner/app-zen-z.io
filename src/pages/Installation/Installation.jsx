@@ -11,22 +11,16 @@ import { ToastContainer } from "react-toastify";
 const Installation = () => {
   const appsData = useLoaderData();
   const [installedAppData, setInstalledAppData] = useState([]);
-  const [loading, setLoading] = useState(false);
   const [sort, setSort] = useState("");
 
   useEffect(() => {
-    setLoading(true);
-    const timeOut = setTimeout(() => {
-      const installedAppId = getInstalledApp();
-      const installedAppIdToNo = installedAppId.map((id) => parseInt(id));
+    const installedAppId = getInstalledApp();
+    const installedAppIdToNo = installedAppId.map((id) => parseInt(id));
 
-      const installedApp = appsData.filter((app) =>
-        installedAppIdToNo.includes(app.id)
-      );
-      setInstalledAppData(installedApp);
-      setLoading(false);
-    }, 500);
-    return () => clearTimeout(timeOut);
+    const installedApp = appsData.filter((app) =>
+      installedAppIdToNo.includes(app.id)
+    );
+    setInstalledAppData(installedApp);
   }, []);
   // console.log(installedAppData);
 
@@ -86,21 +80,13 @@ const Installation = () => {
           </ul>
         </div>
       </div>
-      {loading ? (
-        <>
-          <div className="flex col-span-full justify-center mt-10">
-            <div className="w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
-          </div>
-        </>
-      ) : (
-        installedAppData.map((data) => (
-          <Installed
-            key={data.id}
-            data={data}
-            handleUnInstallation={handleUnInstallation}
-          ></Installed>
-        ))
-      )}
+      {installedAppData.map((data) => (
+        <Installed
+          key={data.id}
+          data={data}
+          handleUnInstallation={handleUnInstallation}
+        ></Installed>
+      ))}
     </div>
   );
 };

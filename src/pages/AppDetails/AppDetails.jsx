@@ -17,7 +17,8 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import { Bounce, ToastContainer } from "react-toastify";
+import { ToastContainer } from "react-toastify";
+import NoAppFound from "../NoAppFound/NoAppFound";
 
 const AppDetails = () => {
   const { id } = useParams();
@@ -45,9 +46,9 @@ const AppDetails = () => {
   if (!singleApp) {
     const { id } = useParams();
     return (
-      <h2>
-        (<span>{id}</span>No item found 😨⛳😨)
-      </h2>
+      <div>
+        <NoAppFound id={id}></NoAppFound>
+      </div>
     );
   }
   const {
@@ -138,7 +139,7 @@ const AppDetails = () => {
         draggable
         pauseOnHover
         theme="dark"
-        transition={Bounce}
+        // transition={Bounce}
       />
 
       <div>
